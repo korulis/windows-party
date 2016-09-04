@@ -13,5 +13,6 @@ namespace WindowsParty.App.Ui.Tests.Views
             Window = window;
             App = app;
         }
+
     }
 }

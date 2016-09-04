@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="LoginViewStyle" TargetType="ContentPresenter">
+            <Style x:Key="ServersViewStyle" TargetType="ContentPresenter">
                 <Setter Property="Content">
                     <Setter.Value>
                         <StackPanel>
@@ -32,7 +32,7 @@
     <ContentControl>
         <controls:ApplicationContentControl>
             <controls:ApplicationContentControl.AppContent>
-                <ContentPresenter Style="{StaticResource LoginViewStyle}" />
+                <ContentPresenter Style="{StaticResource ServersViewStyle}" />
             </controls:ApplicationContentControl.AppContent>
         </controls:ApplicationContentControl>
     </ContentControl>

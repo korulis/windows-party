@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using WindowsParty.Infrastructure;
 using TestStack.White;
 using TestStack.White.UIItems;
@@ -13,13 +14,20 @@ namespace WindowsParty.App.Ui.Tests.Views
 
         public LoginView Logout()
         {
-            var logoutButtonCriteria = SearchCriteria.ByAutomationId(AutomationIds.LoginButton);
+            var logoutButtonCriteria = SearchCriteria.ByAutomationId(AutomationIds.LogoutButton);
             var logoutButton = Retry.For(() => Window.Get<Button>(logoutButtonCriteria), TimeSpan.FromMilliseconds(500));
             logoutButton.Click();
-            var loginWindow = Retry.For(() => App.GetWindow(AppViews.ServersView), TimeSpan.FromMilliseconds(500));
+            var loginWindow = Retry.For(() => App.GetWindow(AppViews.LoginView), TimeSpan.FromMilliseconds(500));
 
             return new LoginView(App, loginWindow);
         }
+
+        public ServersView Wait(int miliseconds)
+        {
+            Thread.Sleep(miliseconds);
+            return this;
+        }
+
 
         public ServersView(Application app, Window window) : base(app, window)
         {

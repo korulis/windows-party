@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using WindowsParty.Infrastructure;
 using TestStack.White;
 using TestStack.White.UIItems;
@@ -20,6 +21,11 @@ namespace WindowsParty.App.Ui.Tests.Views
             return new ServersView(App, serversWindow);
         }
 
+        public LoginView Wait(int miliseconds)
+        {
+            Thread.Sleep(miliseconds);
+            return this;
+        }
 
         public LoginView(Application app, Window window) : base(app, window)
         {
