@@ -1,6 +1,6 @@
 ﻿namespace WindowsParty.Infrastructure
 {
-    public class Views
+    public class AppViews
     {
         public static string LoginView = "LoginView";
         public static string ServersView = "ServersView";

@@ -60,12 +60,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationExtensions.cs" />
     <Compile Include="LoginViewTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\LoginView.cs" />
+    <Compile Include="Views\ServersView.cs" />
+    <Compile Include="Views\WindowsPartyWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\WindowsParty.Infrastructure\WindowsParty.Infrastructure.csproj">
+      <Project>{b722d4fb-94ff-4d50-94d4-e142a156bcf0}</Project>
+      <Name>WindowsParty.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using TestStack.White;
 
@@ -34,8 +27,9 @@ namespace WindowsParty.App.Ui.Tests
         [Test]
         public void UserCanLoginAndLogout()
         {
-            Assert.Fail();
+            _terminalApp.GetLoginView().Login().Logout();
 
+            Assert.Pass();
         }
 
     }
