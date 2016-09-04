@@ -1,4 +1,6 @@
-﻿using WindowsParty.Infrastructure;
+﻿using System.Collections.Generic;
+using WindowsParty.Infrastructure;
+using WindowsParty.Infrastructure.Domain;
 using WindowsParty.Infrastructure.Navigation;
 using MainModule;
 using Moq;
@@ -25,6 +27,23 @@ namespace WindowsParty.App.MainModule.Tests
             _sut.LogoutCommand.Execute(new {});
 
             _navigatorMock.Verify(t=>t.GoTo(AppViews.InitialView));
+        }
+
+        [Test]
+        public void Servers_RaisesPropertyChanged()
+        {
+            var wasRaised = false;
+            _sut.PropertyChanged += (s, e) =>
+            {
+                if (e.PropertyName == nameof(_sut.Servers))
+                {
+                    wasRaised = true;
+                }
+            };
+
+            _sut.Servers = new List<ServerDto>();
+
+            Assert.True(wasRaised);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace MainModule
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand LoginCommand { get; }
 
+
         public LoginViewModel(INavigator navigator)
         {
             _navigator = navigator;
@@ -30,4 +31,6 @@ namespace MainModule
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+
+
 }

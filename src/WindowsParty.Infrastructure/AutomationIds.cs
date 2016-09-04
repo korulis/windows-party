@@ -10,5 +10,6 @@ namespace WindowsParty.Infrastructure
     {
         public static string LoginButton = "LoginButton";
         public static string LogoutButton = "LogoutButton";
+        public static string ServerList = "ServerList";
     }
 }

@@ -19,7 +19,7 @@ namespace WindowsParty.App
             Container.RegisterType<INavigator, Navigator>();
         }
 
-        protected override System.Windows.DependencyObject CreateShell()
+        protected override DependencyObject CreateShell()
         {
             return Container.Resolve<Shell>();
         }

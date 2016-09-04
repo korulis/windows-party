@@ -35,5 +35,13 @@ namespace WindowsParty.App.Ui.Tests
             Assert.Pass();
         }
 
+        [Test]
+        public void UserSeesServersOnServerView()
+        {
+    //        var server _terminalApp
+    //.GetLoginView().Wait(100)
+    //.Login().Wait(100)
+        }
+
     }
 }

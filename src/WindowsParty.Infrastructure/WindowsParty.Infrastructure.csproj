@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AutomationIds.cs" />
     <Compile Include="AppViews.cs" />
+    <Compile Include="Domain\ServerDto.cs" />
     <Compile Include="Navigation\INavigator.cs" />
     <Compile Include="Navigation\ITitleResolver.cs" />
     <Compile Include="Navigation\Navigator.cs" />

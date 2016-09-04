@@ -20,7 +20,20 @@
                             <Button Content="Logout!" AutomationProperties.AutomationId="{x:Static inf:AutomationIds.LogoutButton}"
                                     Command="{Binding LogoutCommand}"/>
 
-                            <TextBlock Text="Servers!" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="ServerDtos!" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <DataGrid ItemsSource="{Binding Servers}" 
+                                      AutomationProperties.AutomationId="{x:Static inf:AutomationIds.ServerList}"
+                                      HorizontalGridLinesBrush="White"
+                                      VerticalGridLinesBrush="Transparent"
+                                      Background="Transparent"
+                                      AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Servers" Binding="{Binding Server}" Width="*"/>
+                                    <DataGridTextColumn Header="Distance" Binding="{Binding Distance}" Width="Auto"/>
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
                         </StackPanel>
                     </Setter.Value>
                 </Setter>
