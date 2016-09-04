@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>9e9d9479-6983-4dda-a76c-0789d5c3cd8e</ProjectGuid>
+    <ProjectGuid>1ae98b50-64e6-4c7b-96e4-209244e1aaca</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsParty.App.Ui.Tests</RootNamespace>
