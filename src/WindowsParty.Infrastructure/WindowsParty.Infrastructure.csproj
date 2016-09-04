@@ -46,7 +46,9 @@
     <Compile Include="AutomationIds.cs" />
     <Compile Include="AppViews.cs" />
     <Compile Include="Navigation\INavigator.cs" />
+    <Compile Include="Navigation\ITitleResolver.cs" />
     <Compile Include="Navigation\Navigator.cs" />
+    <Compile Include="Navigation\TitleResolver.cs" />
     <Compile Include="Regions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

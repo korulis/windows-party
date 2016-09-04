@@ -2,11 +2,15 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/prism"
-
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:inf="clr-namespace:WindowsParty.Infrastructure;assembly=WindowsParty.Infrastructure"
-        Title="Shell"
+        xmlns:navigation="clr-namespace:WindowsParty.Infrastructure.Navigation;assembly=WindowsParty.Infrastructure"
+        mc:Ignorable="d"
+        Title="{Binding CurrentTitle}"
         Width="800"
-        Height="630" >
+        Height="630"
+        d:DataContext="{d:DesignInstance navigation:TitleResolver}">
     <Window.Resources>
 
     </Window.Resources>

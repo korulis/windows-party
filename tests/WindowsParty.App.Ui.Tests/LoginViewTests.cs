@@ -27,7 +27,10 @@ namespace WindowsParty.App.Ui.Tests
         [Test]
         public void UserCanLoginAndLogout()
         {
-            _terminalApp.GetLoginView().Login().Logout();
+            _terminalApp
+                .GetLoginView()
+                .Login()
+                .Logout();
 
             Assert.Pass();
         }

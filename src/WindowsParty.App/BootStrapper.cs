@@ -15,6 +15,7 @@ namespace WindowsParty.App
         {
             base.ConfigureContainer();
 
+            Container.RegisterType<ITitleResolver, TitleResolver>(new ContainerControlledLifetimeManager());
             Container.RegisterType<INavigator, Navigator>();
         }
 

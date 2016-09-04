@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace WindowsParty.App.Components
+namespace WindowsParty.App.Components.Controls
 {
     public class ApplicationContentControl : Control
     {

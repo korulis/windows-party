@@ -11,9 +11,9 @@ namespace WindowsParty.App.Ui.Tests
         public static LoginView GetLoginView(this Application app)
         {
             var viewName = AppViews.LoginView;
-            var view = Retry.For(() => app.GetWindow(viewName), TimeSpan.FromMilliseconds(500)) as LoginView;
-
-            return view;
+            var window = Retry.For(() => app.GetWindow(viewName), TimeSpan.FromMilliseconds(500));
+            
+            return new LoginView(app, window);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using WindowsParty.App.Components;
+using WindowsParty.App.Components.Controls;
 
 namespace WindowsParty.App.Theme.Base
 {

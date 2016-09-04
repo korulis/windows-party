@@ -3,6 +3,7 @@ using WindowsParty.Infrastructure;
 using TestStack.White;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.UIItems.WindowItems;
 using TestStack.White.Utility;
 
 namespace WindowsParty.App.Ui.Tests.Views
@@ -12,14 +13,15 @@ namespace WindowsParty.App.Ui.Tests.Views
         public ServersView Login()
         {
             var loginButtonCriteria = SearchCriteria.ByAutomationId(AutomationIds.LoginButton);
-            var loginButton = Retry.For(() => this.Get<Button>(loginButtonCriteria), TimeSpan.FromMilliseconds(500));
+            var loginButton = Retry.For(() => Window.Get<Button>(loginButtonCriteria), TimeSpan.FromMilliseconds(500));
             loginButton.Click();
-            var serversView = Retry.For(() => App.GetWindow(AppViews.ServersView), TimeSpan.FromMilliseconds(500));
+            var serversWindow = Retry.For(() => App.GetWindow(AppViews.ServersView), TimeSpan.FromMilliseconds(500));
 
-            return serversView as ServersView;
+            return new ServersView(App, serversWindow);
         }
 
-        public LoginView(Application app) : base(app)
+
+        public LoginView(Application app, Window window) : base(app, window)
         {
         }
     }
