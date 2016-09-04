@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WindowsParty.App.Theme.Base;component/Dimensions.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+
+
+    <Style x:Key="ApplicationWindowStyleBase" TargetType="{x:Type Panel}">
+        <Setter Property="Width" Value="{StaticResource AppContentWidth}" />
+        <Setter Property="Height" Value="{StaticResource AppContentHeight}" />
+    </Style>
+
+    <Style x:Key="ApplicationWindowStyle" TargetType="{x:Type Panel}" BasedOn="{StaticResource ApplicationWindowStyleBase}" />
+
+
+    <!--todo kb: remove from project-->
+    
+</ResourceDictionary>

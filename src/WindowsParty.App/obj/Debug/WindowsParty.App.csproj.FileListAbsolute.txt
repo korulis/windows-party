@@ -31,3 +31,9 @@ C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.Infrast
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.Infrastructure.pdb
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\MainModule.dll
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\MainModule.pdb
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.Theme.Base.dll
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.Theme.Base.pdb
+C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\Themes\Generic.baml
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.Components.dll
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.Components.pdb
+C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\App.baml

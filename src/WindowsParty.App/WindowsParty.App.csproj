@@ -129,11 +129,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MainModule\MainModule.csproj">
       <Project>{D7D4461D-957A-461A-88BD-AE4A453016E7}</Project>
       <Name>MainModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsParty.App.Theme.Base\WindowsParty.App.Theme.Base.csproj">
+      <Project>{492aaefc-fc01-43a3-98f8-bbf1ceb442de}</Project>
+      <Name>WindowsParty.App.Theme.Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\WindowsParty.Infrastructure\WindowsParty.Infrastructure.csproj">
       <Project>{b722d4fb-94ff-4d50-94d4-e142a156bcf0}</Project>
