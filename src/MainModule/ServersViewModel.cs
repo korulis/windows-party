@@ -27,17 +27,15 @@ namespace MainModule
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            throw new System.NotImplementedException();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            throw new System.NotImplementedException();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
