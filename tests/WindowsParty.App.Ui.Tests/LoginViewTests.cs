@@ -1,7 +1,12 @@
 ﻿using System;
 using System.IO;
+using WindowsParty.Infrastructure;
 using NUnit.Framework;
 using TestStack.White;
+using TestStack.White.UIItems;
+using TestStack.White.UIItems.Finders;
+using TestStack.White.UIItems.WindowItems;
+using TestStack.White.Utility;
 
 namespace WindowsParty.App.Ui.Tests
 {
@@ -36,11 +41,16 @@ namespace WindowsParty.App.Ui.Tests
         }
 
         [Test]
-        public void UserSeesServersOnServerView()
+        public void UserCanSeeSomeServersOnServerView()
         {
-    //        var server _terminalApp
-    //.GetLoginView().Wait(100)
-    //.Login().Wait(100)
+            var serverList = _terminalApp
+                .GetLoginView().Wait(100)
+                .Login().Wait(100)
+                .GetServerList();
+
+
+            Assert.True(serverList.Rows.Count > 1);
+            
         }
 
     }

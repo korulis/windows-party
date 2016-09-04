@@ -28,6 +28,12 @@ namespace WindowsParty.App.Ui.Tests.Views
             return this;
         }
 
+        public ListView GetServerList()
+        {
+            var criteria = SearchCriteria.ByAutomationId(AutomationIds.ServerList);
+            var serverList = Retry.For(() => Window.Get<ListView>(criteria), TimeSpan.FromMilliseconds(500));
+            return serverList;
+        }
 
         public ServersView(Application app, Window window) : base(app, window)
         {
