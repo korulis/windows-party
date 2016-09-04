@@ -32,6 +32,9 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Prism">
+      <HintPath>..\..\packages\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+    </Reference>
     <Reference Include="Prism.Wpf">
       <HintPath>..\..\packages\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
     </Reference>
@@ -50,6 +53,7 @@
     <Compile Include="LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginViewModel.cs" />
     <Compile Include="MainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServersView.xaml.cs">

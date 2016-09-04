@@ -4,42 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:components="clr-namespace:WindowsParty.App.Components;assembly=WindowsParty.App.Components"
+             xmlns:inf="clr-namespace:WindowsParty.Infrastructure;assembly=WindowsParty.Infrastructure"
+             xmlns:mainModule="clr-namespace:MainModule"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-
-
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance mainModule:LoginViewModel}">
 
     <UserControl.Resources>
         <ResourceDictionary>
 
-
             <Style x:Key="LoginViewStyle" TargetType="ContentPresenter">
                 <Setter Property="Content">
                     <Setter.Value>
-                        <Grid Height="630" Width="800">
+                        <StackPanel>
+                            <Button Content="Login!" AutomationProperties.AutomationId="{x:Static inf:AutomationIds.LoginButton}"
+                                    Command="{Binding LoginCommand}"/>
+
                             <TextBlock Text="Hello" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Grid>
+                        </StackPanel>
                     </Setter.Value>
                 </Setter>
             </Style>
 
-
         </ResourceDictionary>
     </UserControl.Resources>
-    
+
     <ContentControl>
         <components:ApplicationContentControl>
             <components:ApplicationContentControl.AppContent>
-                <ContentPresenter Style="{StaticResource LoginViewStyle}"></ContentPresenter>
-
+                <ContentPresenter Style="{StaticResource LoginViewStyle}" />
             </components:ApplicationContentControl.AppContent>
         </components:ApplicationContentControl>
     </ContentControl>
 </UserControl>
-
-
-
-
-
-
-
