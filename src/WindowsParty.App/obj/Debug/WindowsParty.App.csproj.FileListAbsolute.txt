@@ -2,11 +2,8 @@ C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.exe
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.exe
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.pdb
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\WindowsParty.App.csprojResolveAssemblyReference.cache
-C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\MainWindow.g.cs
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\App.g.cs
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\WindowsParty.App_MarkupCompile.cache
-C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\WindowsParty.App_MarkupCompile.lref
-C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\MainWindow.baml
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\WindowsParty.App.g.resources
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\WindowsParty.App.Properties.Resources.resources
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\WindowsParty.App.csproj.GenerateResource.Cache
@@ -28,3 +25,7 @@ C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\Microsoft.Practices.
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\Prism.xml
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\Prism.Unity.Wpf.xml
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\Prism.Wpf.xml
+C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\Shell.baml
+C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\Shell.g.cs
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.Infrastructure.dll
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.Infrastructure.pdb
