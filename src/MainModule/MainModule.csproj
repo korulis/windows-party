@@ -59,6 +59,7 @@
     <Compile Include="ServersView.xaml.cs">
       <DependentUpon>ServersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WindowsParty.App.Components\WindowsParty.App.Components.csproj">

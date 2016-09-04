@@ -4,9 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MainModule"
+             xmlns:inf="clr-namespace:WindowsParty.Infrastructure;assembly=WindowsParty.Infrastructure"
+             xmlns:controls="clr-namespace:WindowsParty.App.Components.Controls;assembly=WindowsParty.App.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Servers!" FontSize="40"/>
-    </Grid>
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance local:ServersViewModel}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="LoginViewStyle" TargetType="ContentPresenter">
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <StackPanel>
+                            <Button Content="Logout!" AutomationProperties.AutomationId="{x:Static inf:AutomationIds.LogoutButton}"
+                                    Command="{Binding LogoutCommand}"/>
+
+                            <TextBlock Text="Servers!" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ContentControl>
+        <controls:ApplicationContentControl>
+            <controls:ApplicationContentControl.AppContent>
+                <ContentPresenter Style="{StaticResource LoginViewStyle}" />
+            </controls:ApplicationContentControl.AppContent>
+        </controls:ApplicationContentControl>
+    </ContentControl>
 </UserControl>
