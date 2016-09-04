@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using WindowsParty.Infrastructure;
+using WindowsParty.Infrastructure.Navigation;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
@@ -10,6 +11,13 @@ namespace WindowsParty.App
 {
     public class BootStrapper : UnityBootstrapper
     {
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+
+            Container.RegisterType<INavigator, Navigator>();
+        }
+
         protected override System.Windows.DependencyObject CreateShell()
         {
             return Container.Resolve<Shell>();
