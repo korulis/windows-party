@@ -4,12 +4,12 @@ namespace WindowsParty.App
 {
     public partial class App : Application
     {
-        private BootStrapper _bootstrapper;
+        private Bootstrapper _bootstrapper;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            _bootstrapper = new BootStrapper();
+            _bootstrapper = new Bootstrapper();
             _bootstrapper.Run();
         }
     }

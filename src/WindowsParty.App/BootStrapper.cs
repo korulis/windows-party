@@ -9,7 +9,7 @@ using Prism.Unity;
 
 namespace WindowsParty.App
 {
-    public class BootStrapper : UnityBootstrapper
+    public class Bootstrapper : UnityBootstrapper
     {
         protected override void ConfigureContainer()
         {
