@@ -29,3 +29,5 @@ C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\Shell.baml
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\Shell.g.cs
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.Infrastructure.dll
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.Infrastructure.pdb
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\MainModule.dll
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\MainModule.pdb

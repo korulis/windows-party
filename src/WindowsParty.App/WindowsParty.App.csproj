@@ -131,6 +131,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MainModule\MainModule.csproj">
+      <Project>{D7D4461D-957A-461A-88BD-AE4A453016E7}</Project>
+      <Name>MainModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WindowsParty.Infrastructure\WindowsParty.Infrastructure.csproj">
       <Project>{b722d4fb-94ff-4d50-94d4-e142a156bcf0}</Project>
       <Name>WindowsParty.Infrastructure</Name>
