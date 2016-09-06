@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using WindowsParty.Infrastructure;
+using WindowsParty.Infrastructure.Communication;
 using WindowsParty.Infrastructure.Navigation;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
@@ -17,6 +18,7 @@ namespace WindowsParty.App
 
             Container.RegisterType<ITitleResolver, TitleResolver>(new ContainerControlledLifetimeManager());
             Container.RegisterType<INavigator, Navigator>();
+            Container.RegisterType<IAuthenticator, Authenticator>();
         }
 
         protected override DependencyObject CreateShell()
