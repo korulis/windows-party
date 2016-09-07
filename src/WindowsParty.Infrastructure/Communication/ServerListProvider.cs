@@ -21,12 +21,8 @@ namespace WindowsParty.Infrastructure.Communication
             var request = new RestRequest("servers", Method.GET);
             request.AddHeader("Authorization", $"Bearer {token}");
 
-
-            //_client.BaseUrl = new Uri(@"http://playground.tesonet.lt/v1/");
-
             var response = _client.Execute(request);
-            if (response == null ||
-                response.StatusCode == HttpStatusCode.BadRequest) return null;
+            if (response == null ) return null;
             return JsonConvert.DeserializeObject<List<Server>>(response?.Content ?? "");
         }
     }

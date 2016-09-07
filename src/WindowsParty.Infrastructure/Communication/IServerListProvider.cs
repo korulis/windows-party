@@ -6,7 +6,5 @@ namespace WindowsParty.Infrastructure.Communication
     public interface IServerListProvider
     {
         IList<Server> GetServers(string token);
-
-        
     }
 }

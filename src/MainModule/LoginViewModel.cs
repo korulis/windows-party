@@ -14,10 +14,21 @@ namespace MainModule
     {
         private readonly INavigator _navigator;
         private readonly IAuthenticator _authenticator;
+        private bool _errorOccurred;
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand LoginCommand { get; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        public bool ErrorOccurred
+        {
+            get { return _errorOccurred; }
+            set
+            {
+                _errorOccurred = value; 
+                OnPropertyChanged();
+            }
+        }
 
 
         public LoginViewModel(INavigator navigator, IAuthenticator authenticator)
@@ -26,18 +37,24 @@ namespace MainModule
             _authenticator = authenticator;
             LoginCommand = new DelegateCommand(OnLogin);
 
-            Username ="tesonet";
-            Password = "partyanimal";
-
-
+            ErrorOccurred = false;
+            //Username ="tesonet";
+            //Password = "partyanimal";
         }
 
         private void OnLogin()
         {
             var statusCode = _authenticator.Authenticate(Username, Password);
-            if (statusCode != HttpStatusCode.OK) return;
-            var parameters = new NavigationParameters {{"token", _authenticator.Token}};
-            _navigator.GoTo(AppViews.ServersView, parameters);
+            if (statusCode == HttpStatusCode.OK)
+            {
+                ErrorOccurred = false;
+                var parameters = new NavigationParameters {{"token", _authenticator.Token}};
+                _navigator.GoTo(AppViews.ServersView, parameters);
+            }
+            else
+            {
+                ErrorOccurred = true;
+            }
         }
 
 

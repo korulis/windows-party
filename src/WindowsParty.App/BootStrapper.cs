@@ -19,10 +19,7 @@ namespace WindowsParty.App
             base.ConfigureContainer();
 
             var address = ConfigurationManager.AppSettings["WebApiAddress"];
-            var restClient = new RestClient();
-            restClient.AddDefaultHeader("Accept", "application/json");
-            restClient.AddDefaultHeader("Content-type", "application/json");
-            restClient.BaseUrl = new Uri(address);
+            var restClient = new RestClient(address);
             Container.RegisterType<IAuthenticator, Authenticator>(new InjectionConstructor(restClient));
             Container.RegisterType<IServerListProvider, ServerListProvider>(new InjectionConstructor(restClient));
             

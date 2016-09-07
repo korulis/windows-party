@@ -34,7 +34,8 @@ namespace WindowsParty.Infrastructure.Tests
               && req.Resource == "tokens"
               && req.Parameters.Any(p => p.Name == "username" && (string)p.Value == username)
               && req.Parameters.Any(p => p.Name == "password" && (string)p.Value == password)
-                          //&& r.Parameters.Any(p => p.Type == ParameterType.HttpHeader && p.Name == "Authorization" && (string)p.Value == $"Bearer {token}")
+              //&& req.Parameters.Any(p => p.Type == ParameterType.HttpHeader && p.Name == "Accept" && (string)p.Value == "application/json")
+              //&& req.Parameters.Any(p => p.Type == ParameterType.HttpHeader && p.Name == "Content-type" && (string)p.Value == "application/json")
 
             )), Times.Once);
         }

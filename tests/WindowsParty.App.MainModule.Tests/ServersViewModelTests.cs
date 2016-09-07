@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WindowsParty.Infrastructure;
 using WindowsParty.Infrastructure.Communication;
 using WindowsParty.Infrastructure.Domain;
@@ -57,13 +58,15 @@ namespace WindowsParty.App.MainModule.Tests
         }
 
         [Test, AutoData]
-        public void OnNavigatedTo_FillsServerList(string token, IList<Server> serverList)
+        public void OnNavigatedTo_FillsServerList(string token, IList<Server> expectedServers)
         {
-            _serverListProviderMock.Setup(t => t.GetServers(token)).Returns(serverList);
+            var trasformedExpectedServers =
+                expectedServers.Select(s => new Server {Distance = $"{s.Distance} km", Name = s.Name});
+            _serverListProviderMock.Setup(t => t.GetServers(token)).Returns(expectedServers);
 
             _sut.OnNavigatedTo(GetNavigationContextWithToken(token));
 
-            Assert.AreEqual(serverList, _sut.Servers);
+            CollectionAssert.AreEquivalent(trasformedExpectedServers, _sut.Servers);
         }
 
         private NavigationContext GetNavigationContextWithToken(string token)

@@ -53,16 +53,6 @@ namespace WindowsParty.Infrastructure.Tests
         }
 
         [Test]
-        public void GetServers_ReturnsNull_IfBadRequest()
-        {
-            _clientMock.Setup(t => t.Execute(It.IsAny<IRestRequest>())).Returns(new RestResponse() { Content = JsonConvert.SerializeObject(_expectedServers), StatusCode = HttpStatusCode.BadRequest });
-
-            var actualServers = _sut.GetServers(_token);
-
-            Assert.IsNull(actualServers);
-        }
-
-        [Test]
         public void GetServers_ReturnsCorrectServers()
         {
             var serializedServers = JsonConvert.SerializeObject(_expectedServers);

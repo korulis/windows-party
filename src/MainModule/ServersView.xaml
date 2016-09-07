@@ -20,17 +20,24 @@
                             <Button HorizontalAlignment="Right" Content="Logout!" AutomationProperties.AutomationId="{x:Static inf:AutomationIds.LogoutButton}"
                                     Command="{Binding LogoutCommand}"/>
 
-                            <TextBlock Text="ServerDtos!" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Servers!" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <DataGrid ItemsSource="{Binding Servers}" 
                                       AutomationProperties.AutomationId="{x:Static inf:AutomationIds.ServerList}"
                                       HorizontalGridLinesBrush="White"
                                       VerticalGridLinesBrush="Transparent"
                                       Background="Transparent"
                                       AutoGenerateColumns="False"
-                                      Height="500">
+                                      Height="500"
+                                      Width="500">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Servers" Binding="{Binding Name}" Width="*"/>
-                                    <DataGridTextColumn Header="Distance" Binding="{Binding Distance}" Width="Auto"/>
+                                    <DataGridTextColumn Header="Distance" Binding="{Binding Distance}" Width="Auto">
+                                        <DataGridTextColumn.CellStyle>
+                                            <Style>
+                                                <Setter Property="FrameworkElement.HorizontalAlignment" Value="Right"/>
+                                            </Style>
+                                        </DataGridTextColumn.CellStyle>
+                                    </DataGridTextColumn>
                                 </DataGrid.Columns>
 
                             </DataGrid>

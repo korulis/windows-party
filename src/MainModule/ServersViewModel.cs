@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using WindowsParty.Infrastructure;
@@ -54,7 +55,7 @@ namespace MainModule
 
         private void UpdateServers(string token)
         {
-            Servers = /*await*/ _serverListProvider.GetServers(token);
+            Servers = /*await*/ _serverListProvider.GetServers(token).Select(s=> new Server {Distance = $"{s.Distance} km", Name = s.Name});
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
