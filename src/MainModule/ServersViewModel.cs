@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows.Input;
 using WindowsParty.Infrastructure;
 using WindowsParty.Infrastructure.Communication;
@@ -9,6 +10,7 @@ using WindowsParty.Infrastructure.Domain;
 using WindowsParty.Infrastructure.Navigation;
 using Prism.Commands;
 using Prism.Regions;
+using RestSharp;
 
 namespace MainModule
 {
@@ -17,6 +19,7 @@ namespace MainModule
         private readonly INavigator _navigator;
         private readonly IServerListProvider _serverListProvider;
         private IEnumerable<Server> _servers;
+        private RestRequestAsyncHandle _serverUpdateActionHandle;
         public ICommand LogoutCommand { get; }
 
         public IEnumerable<Server> Servers   
@@ -50,12 +53,13 @@ namespace MainModule
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            UpdateServers((string)navigationContext.Parameters["token"]);
+           _serverUpdateActionHandle = _serverListProvider.GetServersAsync((string)navigationContext.Parameters["token"], UpdateServersWithResponseData);
         }
 
-        private void UpdateServers(string token)
+        private void UpdateServersWithResponseData(List<Server> servers)
         {
-            Servers = /*await*/ _serverListProvider.GetServers(token).Select(s=> new Server {Distance = $"{s.Distance} km", Name = s.Name});
+            Thread.Sleep(2000);
+            Servers = servers.Select(s => new Server { Distance = $"{s.Distance} km", Name = s.Name }); ;
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -65,6 +69,7 @@ namespace MainModule
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
+            _serverUpdateActionHandle?.Abort();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
