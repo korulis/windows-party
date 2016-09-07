@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using WindowsParty.Infrastructure;
+using WindowsParty.Infrastructure.Communication;
 using WindowsParty.Infrastructure.Domain;
 using WindowsParty.Infrastructure.Navigation;
 using Prism.Commands;
@@ -13,10 +14,11 @@ namespace MainModule
     public class ServersViewModel : INotifyPropertyChanged, INavigationAware
     {
         private readonly INavigator _navigator;
-        private IEnumerable<ServerDto> _servers;
+        private readonly IServerListProvider _serverListProvider;
+        private IEnumerable<Server> _servers;
         public ICommand LogoutCommand { get; }
 
-        public IEnumerable<ServerDto> Servers   
+        public IEnumerable<Server> Servers   
         {
             get { return _servers; }
             set
@@ -26,10 +28,17 @@ namespace MainModule
             }
         }
 
-        public ServersViewModel(INavigator navigator)
+        public ServersViewModel(INavigator navigator, IServerListProvider serverListProvider)
         {
             _navigator = navigator;
+            _serverListProvider = serverListProvider;
             LogoutCommand = new DelegateCommand(OnLogout);
+
+            Servers = new List<Server>
+            {
+                new Server {Name = "Alzyras",Distance = "Toli" },
+                new Server {Name = "Vilnius",Distance = "1" },
+            };
         }
 
         private void OnLogout()
@@ -40,11 +49,12 @@ namespace MainModule
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            Servers = new List<ServerDto>
-            {
-                new ServerDto {Server = "Alzyras",Distance = "Toli" },
-                new ServerDto {Server = "Vilnius",Distance = "1" },
-            };
+            UpdateServers((string)navigationContext.Parameters["token"]);
+        }
+
+        private void UpdateServers(string token)
+        {
+            Servers = /*await*/ _serverListProvider.GetServers(token);
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)

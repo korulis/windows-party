@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Net;
 using WindowsParty.Infrastructure.Communication;
+using WindowsParty.Infrastructure.Domain;
 using Moq;
 using Newtonsoft.Json;
 using NUnit.Framework;
@@ -33,6 +34,8 @@ namespace WindowsParty.Infrastructure.Tests
               && req.Resource == "tokens"
               && req.Parameters.Any(p => p.Name == "username" && (string)p.Value == username)
               && req.Parameters.Any(p => p.Name == "password" && (string)p.Value == password)
+                          //&& r.Parameters.Any(p => p.Type == ParameterType.HttpHeader && p.Name == "Authorization" && (string)p.Value == $"Bearer {token}")
+
             )), Times.Once);
         }
 

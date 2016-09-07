@@ -1,4 +1,4 @@
-﻿namespace WindowsParty.Infrastructure.Communication
+﻿namespace WindowsParty.Infrastructure.Domain
 {
     public class AuthenticationResponse
     {

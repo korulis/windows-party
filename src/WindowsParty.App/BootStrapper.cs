@@ -18,13 +18,14 @@ namespace WindowsParty.App
         {
             base.ConfigureContainer();
 
-            var authorizationFullAddress = ConfigurationManager.AppSettings["AuthorizationFullAddress"];
+            var address = ConfigurationManager.AppSettings["WebApiAddress"];
             var restClient = new RestClient();
             restClient.AddDefaultHeader("Accept", "application/json");
             restClient.AddDefaultHeader("Content-type", "application/json");
-            restClient.BaseUrl = new Uri(authorizationFullAddress);
+            restClient.BaseUrl = new Uri(address);
             Container.RegisterType<IAuthenticator, Authenticator>(new InjectionConstructor(restClient));
-
+            Container.RegisterType<IServerListProvider, ServerListProvider>(new InjectionConstructor(restClient));
+            
             Container.RegisterType<ITitleResolver, TitleResolver>(new ContainerControlledLifetimeManager());
             Container.RegisterType<INavigator, Navigator>();
         }

@@ -74,6 +74,7 @@
     <Compile Include="AuthenticatorTests.cs" />
     <Compile Include="NavigatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerListProviderTests.cs" />
     <Compile Include="TitleResolverTests.cs" />
   </ItemGroup>
   <ItemGroup>

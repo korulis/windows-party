@@ -16,6 +16,7 @@ namespace MainModule
         public void Initialize()
         {
             _regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(LoginView));
+
             _regionManager.RegisterViewWithRegion(Regions.MainRegion, typeof(ServersView));
         }
     }
