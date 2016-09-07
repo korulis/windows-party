@@ -13,11 +13,11 @@ namespace WindowsParty.App.Ui.Tests.Views
     {
         public ServersView Login()
         {
-            var usernameTextBoxSearchCriteria = SearchCriteria.Indexed(0);
+            var usernameTextBoxSearchCriteria = SearchCriteria.ByAutomationId(AutomationIds.UsernameTextBox);
             var usernameTextBox = Retry.For(() => Window.Get<TextBox>(usernameTextBoxSearchCriteria), TimeSpan.FromMilliseconds(500));
             usernameTextBox.Text = "tesonet";
 
-            var passwordTextBoxSearchCriteria = SearchCriteria.Indexed(1);
+            var passwordTextBoxSearchCriteria = SearchCriteria.ByAutomationId(AutomationIds.PasswordTextBox);
             var passwordTextBox = Retry.For(() => Window.Get<TextBox>(passwordTextBoxSearchCriteria), TimeSpan.FromMilliseconds(500));
             passwordTextBox.Text = "partyanimal";
 

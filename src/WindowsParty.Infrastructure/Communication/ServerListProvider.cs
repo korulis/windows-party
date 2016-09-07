@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Collections.Generic;
 using WindowsParty.Infrastructure.Domain;
 using Newtonsoft.Json;
 using RestSharp;
