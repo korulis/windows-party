@@ -14,9 +14,17 @@ namespace WindowsParty.Infrastructure.Navigation
             _titleResolver = titleResolver;
         }
 
-        public void GoTo(string serversView)
+        public void GoTo(string serversView, NavigationParameters parameters = null)
         {
-            _regionManager.RequestNavigate(Regions.MainRegion, new Uri(serversView, UriKind.Relative));
+            if (parameters == null)
+            {
+                _regionManager.RequestNavigate(Regions.MainRegion, new Uri(serversView, UriKind.Relative));
+            }
+            else
+            {
+                _regionManager.RequestNavigate(Regions.MainRegion, new Uri(serversView, UriKind.Relative), parameters);
+            }
+
             _titleResolver.ChangeTitle(serversView);
         }
     }

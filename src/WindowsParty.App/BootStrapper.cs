@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Windows;
 using WindowsParty.Infrastructure;
 using WindowsParty.Infrastructure.Communication;
@@ -7,6 +8,7 @@ using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
+using RestSharp;
 
 namespace WindowsParty.App
 {
@@ -16,9 +18,15 @@ namespace WindowsParty.App
         {
             base.ConfigureContainer();
 
+            var authorizationFullAddress = ConfigurationManager.AppSettings["AuthorizationFullAddress"];
+            var restClient = new RestClient();
+            restClient.AddDefaultHeader("Accept", "application/json");
+            restClient.AddDefaultHeader("Content-type", "application/json");
+            restClient.BaseUrl = new Uri(authorizationFullAddress);
+            Container.RegisterType<IAuthenticator, Authenticator>(new InjectionConstructor(restClient));
+
             Container.RegisterType<ITitleResolver, TitleResolver>(new ContainerControlledLifetimeManager());
             Container.RegisterType<INavigator, Navigator>();
-            Container.RegisterType<IAuthenticator, Authenticator>();
         }
 
         protected override DependencyObject CreateShell()

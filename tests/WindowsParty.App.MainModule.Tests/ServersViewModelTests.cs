@@ -26,7 +26,7 @@ namespace WindowsParty.App.MainModule.Tests
         {
             _sut.LogoutCommand.Execute(new {});
 
-            _navigatorMock.Verify(t=>t.GoTo(AppViews.InitialView));
+            _navigatorMock.Verify(t=>t.GoTo(AppViews.InitialView,null));
         }
 
         [Test]

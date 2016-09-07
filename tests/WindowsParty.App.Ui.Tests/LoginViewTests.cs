@@ -1,12 +1,7 @@
 ﻿using System;
 using System.IO;
-using WindowsParty.Infrastructure;
 using NUnit.Framework;
 using TestStack.White;
-using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.WindowItems;
-using TestStack.White.Utility;
 
 namespace WindowsParty.App.Ui.Tests
 {

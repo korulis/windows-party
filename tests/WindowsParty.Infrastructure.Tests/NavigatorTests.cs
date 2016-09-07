@@ -23,12 +23,20 @@ namespace WindowsParty.Infrastructure.Tests
             _sut= new Navigator(_regionManagerMock.Object,_titleResolverMock.Object);
         }
 
-        [Test,AutoData]
+        [Test, AutoData]
         public void GoTo_NavigatesToRequiredView(string viewName)
         {
             _sut.GoTo(viewName);
 
-            _regionManagerMock.Verify(t=>t.RequestNavigate(Regions.MainRegion, new Uri(viewName, UriKind.Relative) ));
+            _regionManagerMock.Verify(t => t.RequestNavigate(Regions.MainRegion, new Uri(viewName, UriKind.Relative)));
+        }
+
+        [Test, AutoData]
+        public void GoToWithParameters_NavigatesToRequiredViewWithParameters(string viewName, NavigationParameters parameters)
+        {
+            _sut.GoTo(viewName, parameters);
+
+            _regionManagerMock.Verify(t => t.RequestNavigate(Regions.MainRegion, new Uri(viewName, UriKind.Relative),parameters));
         }
 
         [Test, AutoData]

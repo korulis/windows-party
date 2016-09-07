@@ -1,7 +1,9 @@
-﻿namespace WindowsParty.Infrastructure.Navigation
+﻿using Prism.Regions;
+
+namespace WindowsParty.Infrastructure.Navigation
 {
     public interface INavigator
     {
-        void GoTo(string serversView);
+        void GoTo(string serversView, NavigationParameters parameters = null);
     }
 }

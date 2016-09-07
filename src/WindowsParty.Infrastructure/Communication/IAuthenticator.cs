@@ -1,7 +1,11 @@
-﻿namespace WindowsParty.Infrastructure.Communication
+﻿using System.Net;
+
+namespace WindowsParty.Infrastructure.Communication
 {
     public interface IAuthenticator
     {
-        string Authenticate(string user, string pass);
+        string Token { get; }
+
+        HttpStatusCode Authenticate(string username, string password);
     }
 }

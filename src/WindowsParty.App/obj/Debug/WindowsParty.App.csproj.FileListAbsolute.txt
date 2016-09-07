@@ -37,3 +37,7 @@ C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\Themes\Generic.baml
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.Components.dll
 C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\WindowsParty.App.Components.pdb
 C:\ProjectsGit\windows-party\src\WindowsParty.App\obj\Debug\App.baml
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\RestSharp.dll
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\RestSharp.xml
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\Newtonsoft.Json.dll
+C:\ProjectsGit\windows-party\src\WindowsParty.App\bin\Debug\Newtonsoft.Json.xml
