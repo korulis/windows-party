@@ -40,7 +40,7 @@ namespace WindowsParty.App.Ui.Tests
         {
             var serverList = _terminalApp
                 .GetLoginView().Wait(100)
-                .Login().Wait(100)
+                .Login().Wait(3000)
                 .GetServerList();
 
 
