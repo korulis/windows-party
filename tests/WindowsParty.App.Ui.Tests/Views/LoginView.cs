@@ -13,6 +13,14 @@ namespace WindowsParty.App.Ui.Tests.Views
     {
         public ServersView Login()
         {
+            var usernameTextBoxSearchCriteria = SearchCriteria.Indexed(0);
+            var usernameTextBox = Retry.For(() => Window.Get<TextBox>(usernameTextBoxSearchCriteria), TimeSpan.FromMilliseconds(500));
+            usernameTextBox.Text = "tesonet";
+
+            var passwordTextBoxSearchCriteria = SearchCriteria.Indexed(1);
+            var passwordTextBox = Retry.For(() => Window.Get<TextBox>(passwordTextBoxSearchCriteria), TimeSpan.FromMilliseconds(500));
+            passwordTextBox.Text = "partyanimal";
+
             var loginButtonCriteria = SearchCriteria.ByAutomationId(AutomationIds.LoginButton);
             var loginButton = Retry.For(() => Window.Get<Button>(loginButtonCriteria), TimeSpan.FromMilliseconds(500));
             loginButton.Click();

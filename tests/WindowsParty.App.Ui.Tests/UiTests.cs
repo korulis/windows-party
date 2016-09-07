@@ -6,7 +6,7 @@ using TestStack.White;
 namespace WindowsParty.App.Ui.Tests
 {
     [TestFixture, Explicit]
-    public class LoginViewTests
+    public class UiTests
     {
         private Application _terminalApp;
 

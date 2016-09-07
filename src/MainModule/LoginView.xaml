@@ -44,12 +44,15 @@
                                     </TextBlock.Style>
                                 </TextBlock>
                                 <TextBox Grid.Column="1" Grid.Row="0"
-                                         Text="{Binding Username}" Margin="10" Width="150"/>
+                                         Text="{Binding Username}" Margin="10" Width="150"
+                                         AutomationProperties.AutomationId="{x:Static inf:AutomationIds.UsernameTextBox}"/>
                                 <TextBox Grid.Column="1" Grid.Row="1"
-                                         Text="{Binding Password}" Margin="10" Width="150"/>
-                                <Button  Grid.Column="1" Grid.Row="2"
-                                         Content="Login!" AutomationProperties.AutomationId="{x:Static inf:AutomationIds.LoginButton}" Margin="10"
-                                    Command="{Binding LoginCommand}"/>
+                                         Text="{Binding Password}" Margin="10" Width="150"
+                                         AutomationProperties.AutomationId="{x:Static inf:AutomationIds.PasswordTextBox}"/>
+                                <Button Grid.Column="1" Grid.Row="2"
+                                        Content="Login!" Margin="10"
+                                        Command="{Binding LoginCommand}"
+                                        AutomationProperties.AutomationId="{x:Static inf:AutomationIds.LoginButton}"/>
                             </Grid>
 
                     </Setter.Value>
